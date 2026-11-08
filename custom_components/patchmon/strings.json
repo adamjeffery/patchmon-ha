@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Create an API credential in PatchMon under Settings → Integrations → Auto-Enrollment & API, with the host \"get\" scope.",
+        "data": {
+          "url": "PatchMon URL",
+          "token_key": "Token key",
+          "token_secret": "Token secret",
+          "verify_ssl": "Verify SSL certificate"
+        }
+      },
+      "reauth_confirm": {
+        "description": "PatchMon rejected the API credential. Enter a new one.",
+        "data": {
+          "token_key": "Token key",
+          "token_secret": "Token secret"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the PatchMon API at this URL.",
+      "invalid_auth": "PatchMon rejected the credential. Check the key, the secret, its \"get\" scope, and any IP restriction.",
+      "unknown": "Unexpected error. Check the Home Assistant log."
+    },
+    "abort": {
+      "already_configured": "This PatchMon server is already configured.",
+      "reauth_successful": "The credential was updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Polling interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "hosts_needing_updates": {
+        "name": "Hosts needing updates"
+      },
+      "outdated_packages": {
+        "name": "Outdated packages"
+      },
+      "security_updates": {
+        "name": "Security updates"
+      },
+      "host_updates": {
+        "name": "Updates"
+      },
+      "host_security_updates": {
+        "name": "Security updates"
+      }
+    }
+  }
+}
